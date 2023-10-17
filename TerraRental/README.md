@@ -1,18 +1,44 @@
-## Getting Started
+``` mermaid
+classDiagram
+    Tetris <|-- Tablero
+    Tetris <|-- Juego
+    Tablero <|-- Juego
+    Juego <|--Jugador
+    Tablero <|--GUI
+    GUI <|--Jugador
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
 
-## Folder Structure
+    Tetris: +int posicionActual
+    class Tetris{
+        void moverseIoD()
+        void rotar()
+        void caer()
+    }
 
-The workspace contains two folders by default, where:
+    Tablero: +Array[][] tablero
+    class Tablero{
+        bool comprobarColision()
+        void limpiarFilas()
+        void actualizarPuntuacion()
+    }
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+    Juego: +Tablero tablero
+    Juego: +Tetris actual
+    class Juego{
+        void iniciarJuego()
+        void finalizarJuego()
+    }
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+    Jugador: +String nombre
+    Jugador: +int puntuacion
+    class Jugador{
+        void registrarPuntacion()
+        void setNombre()
+        
+    }
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+    class GUI{
+        void dibujarTablero()
+        int mostrarPuntuacion()
+    }
+```
