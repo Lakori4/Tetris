@@ -1,4 +1,5 @@
-```classDiagram
+```
+classDiagram
     Tetris <|-- Tablero
     Tetris <|-- Juego
     Tablero <|-- Juego
@@ -39,4 +40,5 @@
     class GUI{
         void dibujarTablero()
         int mostrarPuntuacion()
-    } ```
+    }
+```
