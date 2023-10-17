@@ -1,4 +1,4 @@
-```
+``` mermaid
 classDiagram
     Tetris <|-- Tablero
     Tetris <|-- Juego
