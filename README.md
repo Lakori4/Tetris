@@ -1,4 +1,6 @@
-```
+## Estructura de Clases
+
+```mermaid
 classDiagram
     class GameArea {
         - int gridRows
@@ -62,7 +64,6 @@ classDiagram
     GameArea --> GameThread
     GameArea --> Tetrimino
 
-```
 
 Proyecto Tetris
 Este proyecto Tetris implementa el clásico juego de Tetris en Java, utilizando tres clases principales: GameArea, GameThread, y Tetrimino. Cada una de estas clases cumple un papel importante en la creación y ejecución del juego. A continuación, se proporciona una descripción de estas clases y su funcionalidad:
