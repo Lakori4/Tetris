@@ -109,9 +109,3 @@ Los tetriminos son los bloques básicos del juego y pueden rotar y moverse later
 GameForm
 La clase GameForm representa la interfaz gráfica de usuario del juego Tetris. Incluye el área de juego, controles por teclado y la visualización de puntuación y nivel. Esta clase se encarga de iniciar el juego, gestionar los controles por teclado y actualizar la interfaz de usuario en función de la puntuación y el nivel.
 
-Cómo usar el proyecto
-Puedes utilizar este proyecto Tetris como base para crear tu propio juego Tetris en Java. El código fuente proporcionado en las clases GameArea, GameThread, y Tetrimino te servirá como punto de partida. Puedes personalizar y ampliar estas clases para añadir más características al juego, como controles de usuario, sonidos y animaciones.
-
-Si deseas ejecutar el juego, asegúrate de tener una máquina virtual Java (JVM) instalada y compila las clases proporcionadas. Luego, ejecuta la clase GameForm para iniciar el juego.
-
-¡Diviértete desarrollando y jugando Tetris!
