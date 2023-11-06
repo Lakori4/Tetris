@@ -2,6 +2,15 @@
 
 ```mermaid
 classDiagram
+    class GameForm {
+        - GameArea ga
+        + GameForm()
+        + initControls()
+        + startGame()
+        + updateScore(score: int)
+        + updateNivel(nivel: int)
+    }
+
     class GameArea {
         - int gridRows
         - int gridColumns
@@ -61,9 +70,10 @@ classDiagram
         + getLimiteIzquierda(): int
     }
 
+    GameForm --> GameArea
     GameArea --> GameThread
     GameArea --> Tetrimino
-
+```
 
 Proyecto Tetris
 Este proyecto Tetris implementa el clásico juego de Tetris en Java, utilizando tres clases principales: GameArea, GameThread, y Tetrimino. Cada una de estas clases cumple un papel importante en la creación y ejecución del juego. A continuación, se proporciona una descripción de estas clases y su funcionalidad:
@@ -95,6 +105,9 @@ Inicialización de tetriminos y colocación aleatoria en el área de juego.
 Rotación de tetriminos en sentido horario.
 Obtención de información sobre la forma, color y posición de un tetrimino.
 Los tetriminos son los bloques básicos del juego y pueden rotar y moverse lateralmente a medida que caen hacia abajo en el área de juego.
+
+GameForm
+La clase GameForm representa la interfaz gráfica de usuario del juego Tetris. Incluye el área de juego, controles por teclado y la visualización de puntuación y nivel. Esta clase se encarga de iniciar el juego, gestionar los controles por teclado y actualizar la interfaz de usuario en función de la puntuación y el nivel.
 
 Cómo usar el proyecto
 Puedes utilizar este proyecto Tetris como base para crear tu propio juego Tetris en Java. El código fuente proporcionado en las clases GameArea, GameThread, y Tetrimino te servirá como punto de partida. Puedes personalizar y ampliar estas clases para añadir más características al juego, como controles de usuario, sonidos y animaciones.
