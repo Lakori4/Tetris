@@ -121,7 +121,7 @@ public class GameArea extends JPanel{
     //Metodo para hacer caer al tetrimino instantaneamente hasta abajo
      public void dropTetrimino(){
          if(tetrimino == null) return;
-         while(checkBottom()){
+         else if (checkBottom()){
             tetrimino.moverAbajo();
          }
          repaint();
