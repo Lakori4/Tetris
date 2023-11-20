@@ -2,36 +2,6 @@
 
 ```mermaid
 classDiagram
-    class GameForm {
-        - GameArea ga
-        + GameForm()
-        + initControls()
-        + startGame()
-        + updateScore(score: int)
-        + updateNivel(nivel: int)
-    }
-
-    class GameArea {
-        - int gridRows
-        - int gridColumns
-        - Color[][] background
-        - int gridCellSize
-        - Tetrimino tetrimino
-        + GameArea(placeholder: JPanel, columns: int)
-        + spawnTetrimino()
-        + tetriminoFueraLimite(): boolean
-        + caerTetrimino(): boolean
-        + moverTetriminoDerecha()
-        + moverTetriminoIzquierda()
-        + dropTetrimino()
-        + rotarTetrimino()
-        + limpiarLineas(): int
-        + moverTetriminioABackground()
-        + drawTetrimino(g: Graphics)
-        + drawBackground(g: Graphics)
-        + drawGridSquare(g: Graphics, color: Color, x: int, y: int)
-    }
-
     class GameThread {
         - GameArea ga
         - GameForm gf
@@ -44,6 +14,23 @@ classDiagram
         + run()
     }
 
+    class GameArea {
+        + spawnTetrimino()
+        + caerTetrimino(): boolean
+        + tetriminoFueraLimite(): boolean
+        + moverTetriminioABackground()
+        + limpiarLineas(): int
+    }
+
+    class GameForm {
+       - GameArea ga
+        + initComponents()
+        + initControls()
+        + startGame()
+        + updateScore(score: int)
+        + updateNivel(nivel: int)
+    }
+
     class Tetrimino {
         - int[][] forma
         - Color color
@@ -53,7 +40,6 @@ classDiagram
         - int rotacionActual
         - Color[] coloresDisponibles
         + Tetrimino(f: int[][])
-        + initFormas()
         + spawn(gridWidth: int)
         + getForma(): int[][]
         + getColor(): Color
@@ -68,11 +54,50 @@ classDiagram
         + getLimiteTablero(): int
         + getLimiteDerecha(): int
         + getLimiteIzquierda(): int
+        + setX(newX: int)
+        + setY(newY: int)
     }
 
-    GameForm --> GameArea
-    GameArea --> GameThread
+    class FiguraI {
+        + FiguraI()
+        + rotar()
+    }
+
+    class FiguraJ {
+        + FiguraJ()
+    }
+
+    class FiguraL {
+        + FiguraL()
+    }
+
+    class FiguraO {
+        + FiguraO()
+    }
+
+    class FiguraS {
+        + FiguraS()
+    }
+
+    class FiguraT {
+        + FiguraT()
+    }
+
+    class FiguraZ {
+        + FiguraZ()
+    }
+
+    GameThread --> GameArea
+    GameThread --> GameForm
     GameArea --> Tetrimino
+    Tetrimino <|-- FiguraI
+    Tetrimino <|-- FiguraJ
+    Tetrimino <|-- FiguraL
+    Tetrimino <|-- FiguraO
+    Tetrimino <|-- FiguraS
+    Tetrimino <|-- FiguraT
+    Tetrimino <|-- FiguraZ
+
 ```
 
 Proyecto Tetris
@@ -108,4 +133,69 @@ Los tetriminos son los bloques básicos del juego y pueden rotar y moverse later
 
 GameForm
 La clase GameForm representa la interfaz gráfica de usuario del juego Tetris. Incluye el área de juego, controles por teclado y la visualización de puntuación y nivel. Esta clase se encarga de iniciar el juego, gestionar los controles por teclado y actualizar la interfaz de usuario en función de la puntuación y el nivel.
+
+# Bloques Tetris
+
+Este proyecto implementa el clásico juego Tetris en Java, dividiendo la lógica en diferentes clases.
+
+## Clases del Proyecto
+
+### `FiguraI`
+
+La clase `FiguraI` representa la figura "I" del Tetris. Esta figura consiste en una fila de cuatro bloques.
+
+#### Métodos Principales
+
+- `FiguraI()`: Constructor que inicializa la forma de la figura "I".
+- `rotar()`: Método que rota la figura "I" de manera especial.
+
+### `FiguraJ`
+
+La clase `FiguraJ` representa la figura "J" del Tetris. Esta figura tiene forma de "J".
+
+#### Métodos Principales
+
+- `FiguraJ()`: Constructor que inicializa la forma de la figura "J".
+
+### `FiguraL`
+
+La clase `FiguraL` representa la figura "L" del Tetris. Esta figura tiene forma de "L".
+
+#### Métodos Principales
+
+- `FiguraL()`: Constructor que inicializa la forma de la figura "L".
+
+### `FiguraO`
+
+La clase `FiguraO` representa la figura "O" del Tetris. Esta figura tiene forma de cuadrado.
+
+#### Métodos Principales
+
+- `FiguraO()`: Constructor que inicializa la forma de la figura "O".
+
+### `FiguraS`
+
+La clase `FiguraS` representa la figura "S" del Tetris. Esta figura tiene forma de "S".
+
+#### Métodos Principales
+
+- `FiguraS()`: Constructor que inicializa la forma de la figura "S".
+
+### `FiguraT`
+
+La clase `FiguraT` representa la figura "T" del Tetris. Esta figura tiene forma de "T".
+
+#### Métodos Principales
+
+- `FiguraT()`: Constructor que inicializa la forma de la figura "T".
+
+### `FiguraZ`
+
+La clase `FiguraZ` representa la figura "Z" del Tetris. Esta figura tiene forma de "Z".
+
+#### Métodos Principales
+
+- `FiguraZ()`: Constructor que inicializa la forma de la figura "Z".
+
+---
 
