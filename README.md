@@ -138,8 +138,6 @@ La clase GameForm representa la interfaz gráfica de usuario del juego Tetris. I
 
 Este proyecto implementa el clásico juego Tetris en Java, dividiendo la lógica en diferentes clases.
 
-## Clases del Proyecto
-
 ### `FiguraI`
 
 La clase `FiguraI` representa la figura "I" del Tetris. Esta figura consiste en una fila de cuatro bloques.
