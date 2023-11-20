@@ -1,14 +1,11 @@
 
-package tetris;
+package bloquestetris.src.tetris;
 
-import java.awt.Color;
-import java.awt.Font;
 import java.awt.event.*;
 import javax.swing.InputMap;
 import javax.swing.ActionMap;
 import javax.swing.KeyStroke;
 import javax.swing.AbstractAction;
-import javax.swing.JLabel;
 
 
 /**

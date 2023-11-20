@@ -2,9 +2,10 @@
  * La clase GameArea representa el área de juego en el juego de Tetris, donde se muestran
  * los tetriminos y se gestiona la interacción con el jugador.
  */
-package tetris;
+package bloquestetris.src.tetris;
 
-import bloquestetris.*;
+import bloquestetris.bloquestetris.*;
+
 import java.awt.*;
 import java.util.Random;
 import javax.swing.JPanel;

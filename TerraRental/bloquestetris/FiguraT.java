@@ -1,5 +1,5 @@
 
-package bloquestetris;
+package bloquestetris.bloquestetris;
 
 import bloquestetris.src.tetris.Tetrimino;
 
