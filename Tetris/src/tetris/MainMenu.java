@@ -16,7 +16,8 @@ public class MainMenu extends JFrame implements ActionListener {
     private JPanel panel;
 
     /**
-     *
+     *Constructor para crear la ventana del menú principal que será llamado
+     * al iniciar el juego y cada vez que el usuario decida volver al menú principal
      */
 
     public MainMenu () {
@@ -67,6 +68,11 @@ public class MainMenu extends JFrame implements ActionListener {
         setVisible(true);
     }
 
+    /**
+     * @param e the event to be processed
+     * Método para "escuchar" a los botones "Jugar" y "Salir".
+     * "Jugar" ejecuta el juego, y "Salir" termina la ejecución
+     */
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == bJugar) {
             /* Create and display the form */

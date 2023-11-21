@@ -110,6 +110,7 @@ public class GameForm extends javax.swing.JFrame {
      * @param nivel Nivel actual del juego.
      */
     public void updateNivel (int nivel){
+
         nivelDisplay.setText("Nivel: "+ nivel);
     }
     
