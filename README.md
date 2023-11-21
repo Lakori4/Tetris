@@ -103,8 +103,6 @@ classDiagram
     Figura <|-- FiguraS
     Figura <|-- FiguraT
     Figura <|-- FiguraZ
-
-
 ```
 
 Proyecto Tetris
