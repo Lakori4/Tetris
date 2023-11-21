@@ -4,7 +4,7 @@
  * incluyendo la caída de tetriminos, la gestión de puntuación y niveles, y la actualización
  * de la interfaz de usuario.
  */
-package bloquestetris.src.tetris;
+package tetris;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;

@@ -1,5 +1,5 @@
 
-package bloquestetris.src.tetris;
+package tetris;
 
 import java.awt.event.*;
 import javax.swing.InputMap;
@@ -33,7 +33,7 @@ public class GameForm extends javax.swing.JFrame {
         startGame();
     }
 
-    //Metodo para los controles por teclado
+    //Método para los controles por teclado
     /* Input map -> Contiene las pulsaciones de teclas
        Action map -> Contiene las acciones de las teclas
     */
@@ -208,7 +208,11 @@ public class GameForm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnMainMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMainMenuActionPerformed
-        // TODO add your handling code here:
+        setVisible(false); //Esconde la ventana de juego
+        dispose(); //Elimina la ventana de juego
+
+        new MainMenu(); //Llama al menú principal como si hubiera vuelto a empezar
+
     }//GEN-LAST:event_btnMainMenuActionPerformed
 
     
@@ -237,11 +241,7 @@ public class GameForm extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new GameForm().setVisible(true);
-            }
-        });
+        new MainMenu();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

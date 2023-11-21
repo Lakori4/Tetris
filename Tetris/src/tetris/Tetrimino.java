@@ -1,7 +1,7 @@
 /**
  * La clase Tetrimino representa una pieza individual del juego Tetris, con una forma, color y posición específicos.
  */
-package bloquestetris.src.tetris;
+package tetris;
 
 import java.awt.*;
 import java.util.Random;
