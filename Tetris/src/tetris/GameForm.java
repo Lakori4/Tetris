@@ -240,7 +240,7 @@ public class GameForm extends javax.swing.JFrame {
         }
         //</editor-fold>
 
-        /* Create and display the form */
+        //Ejecuta el menú principal
         new MainMenu();
     }
 

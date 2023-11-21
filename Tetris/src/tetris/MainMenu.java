@@ -14,6 +14,11 @@ public class MainMenu extends JFrame implements ActionListener {
     //Botones para jugar y para salir;
     private JButton bJugar, bSalir;
     private JPanel panel;
+
+    /**
+     *
+     */
+
     public MainMenu () {
 
         //Crea la ventana
@@ -29,7 +34,7 @@ public class MainMenu extends JFrame implements ActionListener {
 
 
 
-        //Crea el panel con
+        //Crea los botones "Jugar" y "Salir", con sus respectivos tamaños, tamaño de fuente y alineación.
 
         bJugar = new JButton("Jugar") {
             {
@@ -48,32 +53,34 @@ public class MainMenu extends JFrame implements ActionListener {
             }
         };
 
+        //Genera los "listeners" para los botones.
         bJugar.addActionListener(this);
         bSalir.addActionListener(this);
 
+        //Crea espacios intermedios entre los botones y el JFrame
         panel.add(Box.createRigidArea(new Dimension(300, 40)));
         panel.add(bJugar);
         panel.add(Box.createRigidArea(new Dimension(300, 30)));
         panel.add(bSalir);
 
-        //pack();
-
+        //Hace la ventana visible
         setVisible(true);
     }
 
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == bJugar) {
+            /* Create and display the form */
             java.awt.EventQueue.invokeLater(new Runnable() {
 
 
                 public void run() {
-                    new GameForm().setVisible(true);
+                    new GameForm().setVisible(true); //Ejecuta el juego
                 }
             });
         }
 
         if (e.getSource() == bSalir) {
-            System.exit(0);
+            System.exit(0); //Sale del juego
         }
     }
 }
