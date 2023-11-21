@@ -87,17 +87,22 @@ classDiagram
         + FiguraZ()
     }
 
+    class Figura{
+        + Figura(matriz: int[][])
+        + rotar()
+    }
+
     GameThread --> GameArea
     GameThread --> GameForm
     GameArea --> Tetrimino
-    Tetrimino <|-- FiguraI
-    Tetrimino <|-- FiguraJ
-    Tetrimino <|-- FiguraL
-    Tetrimino <|-- FiguraO
-    Tetrimino <|-- FiguraS
-    Tetrimino <|-- FiguraT
-    Tetrimino <|-- FiguraZ
-
+    Tetrimino <|-- Figura 
+    Figura <|-- FiguraI
+    Figura <|-- FiguraJ
+    Figura <|-- FiguraL
+    Figura <|-- FiguraO
+    Figura <|-- FiguraS
+    Figura <|-- FiguraT
+    Figura <|-- FiguraZ
 ```
 
 Proyecto Tetris
