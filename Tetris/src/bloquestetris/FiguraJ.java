@@ -9,7 +9,7 @@ public class FiguraJ extends Figura {
 
     /**
      * Constructor de la clase FiguraJ.
-     * Inicializa la figura con una matriz especÃ­fica.
+     * Inicializa la figura con una matriz específica.
      */
     public FiguraJ(){
         super(new int[][]{{0,1},{0,1},{1,1}});

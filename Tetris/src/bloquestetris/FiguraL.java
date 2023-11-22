@@ -9,7 +9,7 @@ public class FiguraL extends Figura {
 
     /**
      * Constructor de la clase FiguraL.
-     * Inicializa la figura con una matriz especÃ­fica.
+     * Inicializa la figura con una matriz específica.
      */
     public FiguraL(){
         super(new int[][]{{1,0},{1,0},{1,1}});

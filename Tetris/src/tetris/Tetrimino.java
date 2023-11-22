@@ -163,7 +163,7 @@ public class Tetrimino {
             rotacionActual = 0;
         }
         
-        /*Rotacion actual funciona como indice del array "formas" para identificar
+        /*Rotación actual funciona como índice del array "formas" para identificar
         cual de las 4 posibles rotaciones de un tetrimino se necesita*/
         forma = formas[rotacionActual];
     }
