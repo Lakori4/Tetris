@@ -14,6 +14,7 @@ public class MainMenu extends JFrame implements ActionListener {
     //Botones para jugar y para salir;
     private JButton bJugar, bSalir;
     private JPanel panel;
+    public static GameForm game;
 
     /**
      *Constructor para crear la ventana del menú principal que será llamado
@@ -71,7 +72,7 @@ public class MainMenu extends JFrame implements ActionListener {
     /**
      * @param e the event to be processed
      * Método para "escuchar" a los botones "Jugar" y "Salir".
-     * "Jugar" ejecuta el juego, y "Salir" termina la ejecución
+     * "Jugar" ejecuta el juego, y "Salir" termina el programa.
      */
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == bJugar) {
@@ -80,7 +81,10 @@ public class MainMenu extends JFrame implements ActionListener {
 
 
                 public void run() {
-                    new GameForm().setVisible(true); //Ejecuta el juego
+
+                    game = new GameForm(); //Ejecuta el juego
+                    dispose();
+                    game.setVisible(true);
                 }
             });
         }
