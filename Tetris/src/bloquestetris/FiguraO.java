@@ -1,9 +1,6 @@
 
 package bloquestetris;
 
-import tetris.Tetrimino;
-
-
 /**
  * Representa la figura Tetrimino en forma de O.
  * Extiende la clase abstracta Figura.

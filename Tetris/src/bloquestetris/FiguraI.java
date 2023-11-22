@@ -1,8 +1,6 @@
 
 package bloquestetris;
 
-import tetris.Tetrimino;
-
 /**
  *
  * @author ginar
