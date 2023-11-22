@@ -4,10 +4,7 @@ package tetris;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-import javax.swing.InputMap;
-import javax.swing.ActionMap;
-import javax.swing.KeyStroke;
-import javax.swing.AbstractAction;
+
 
 
 /**
@@ -36,8 +33,8 @@ public class GameForm extends JFrame {
     }
 
     //Método para los controles por teclado
-    /* Input map -> Contiene las pulsaciones de teclas
-       Action map -> Contiene las acciones de las teclas
+    /* Input map → Contiene las pulsaciones de teclas
+       Action map → Contiene las acciones de las teclas
     */
     
     /**
@@ -55,7 +52,7 @@ public class GameForm extends JFrame {
         
         /* Las clases abstractas no pueden instanciarse, necesitamos la clase 
         Action que es abstracta. Para solucionar el hecho de que no puede 
-        instanciarse creamos otra clase (clase anonima) y hacemos que esta herede de Action
+        instanciarse creamos otra clase (clase anónima) y hacemos que esta herede de Action
         */
         
         
@@ -93,7 +90,7 @@ public class GameForm extends JFrame {
      */
     public void startGame(){
         
-        //El metodo start esta disponible en la clase Thread y se hereda a GameThread
+        //El método start está disponible en la clase Thread y se hereda a GameThread
         new GameThread(ga, this).start();
     }
     
