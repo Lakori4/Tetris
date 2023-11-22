@@ -17,28 +17,28 @@ import javax.swing.JPanel;
 public class GameArea extends JPanel{
     
      // Atributos de la clase
-    private int gridRows;
-    private int gridColumns;
+    private final int gridRows;
+    private final int gridColumns;
     
     /**
      * Matriz que representa el fondo del área de juego, donde los tetriminos
      * han llegado a los límites del tablero o están adyacentes a otras piezas.
      */
-    private Color[][] background;
+    private final Color[][] background;
     
      /**
      * Tamaño de una sola celda en el área de juego.
      */
-    private int gridCellSize;
+    private final int gridCellSize;
     
    /**
      * Representa el tetrimino actual que se controla en el juego.
      */
-    // Se utilizara 1 para indicar si un cuadrado debe tener color y 0 si debe estar en blanco 
+    // Se utilizará 1 para indicar si un cuadrado debe tener color y 0 si debe estar en blanco
     private Tetrimino tetrimino;
     
     //Array que contiene todos los tipos de tetriminos
-    private Tetrimino[] tetriminos;
+    private final Tetrimino[] tetriminos;
     
     
     
@@ -49,18 +49,18 @@ public class GameArea extends JPanel{
      * @param columns     El número de columnas en el área de juego.
      */
     public GameArea(JPanel placeholder, int columns){
-        //El placeholder es el diseño creado en la clase GameForm qe sirve como referencia para el tamaño del area
+        //El placeholder es el diseño creado en la clase GameForm qe sirve como referencia para el tamaño del área
         
         //Placeholder invisible para que no se vea en pantalla
         //placeholder.setVisible(false); COMENTADO PORQUE NOS INTERESA QUE SE VEA
         
-        //Usamos el area del placeholder como parametros para crear el area del juego
+        //Usamos el área del placeholder como parameters para crear el área del juego
         setBounds(placeholder.getBounds());
         setBorder(placeholder.getBorder());
         setBackground(placeholder.getBackground());
         
         
-        //Para obtener el tamaño de una celda, debemos dividir el tamaño de el placeholder entre el numero de columnas
+        //Para obtener el tamaño de una celda, debemos dividir el tamaño del placeholder entre el número de columnas
        gridColumns = columns;
         gridCellSize = getBounds().width / gridColumns;
         gridRows = getBounds().height / gridCellSize;
@@ -103,11 +103,11 @@ public class GameArea extends JPanel{
      */
     public boolean caerTetrimino(){
         
-        /*Revisamos primero si la pieza ha tocado el limite , sino la movemos
-        abajo, en cuanto llega al limite, hacemos que el tetrimino permanezca 
-        en la pantalla haciendolo parte del background
+        /*Revisamos primero si la pieza ha tocado el límite, si no la movemos
+        abajo, en cuanto llega al límite, hacemos que el tetrimino permanezca
+        en la pantalla haciéndolo parte del background
         */
-        if (checkBottom() == false){ 
+        if (!checkBottom()){
             
            
             return false;
@@ -115,8 +115,8 @@ public class GameArea extends JPanel{
         
         tetrimino.moverAbajo();
         
-        /*Se manda llamar el metodo repaint pues tenemos que borrar y dibujar otra vez
-        el tetrimino para que parezca que esta cayendo*/
+        /*Se manda llamar el método repaint, pues tenemos que borrar y dibujar otra vez
+        el tetrimino para que parezca que está cayendo*/
         repaint();
         
         return true;
@@ -125,12 +125,12 @@ public class GameArea extends JPanel{
     /**
      * Mueve el tetrimino actual hacia la derecha en el área de juego, si es posible.
      */
-    /*En todos los metodos que involucre mover o rotar el tetrimino debe agregarse
-    el metodo repaint para que el movimiento del tetrimino sea mas smooth
+    /*En todos los métodos que involucre mover o rotar el tetrimino debe agregarse
+    el método repaint para que el movimiento del tetrimino sea más smooth
     */
     public void moverTetriminoDerecha(){
         if(tetrimino == null) return;
-        if (checkRight() == false) {
+        if (!checkRight()) {
             return;
         }
         
@@ -140,7 +140,7 @@ public class GameArea extends JPanel{
     
      public void moverTetriminoIzquierda(){
          if(tetrimino == null) return;
-         if (checkLeft() == false ) {
+         if (!checkLeft()) {
              return;
          }
          
@@ -178,16 +178,16 @@ public class GameArea extends JPanel{
      }
      
     
-    /*Metodo para revisar si el tetrimino puede moverse o no dependiendo de si
-    ha tocado el limite del tablero o alguna pieza
+    /*Método para revisar si el tetrimino puede moverse o no dependiendo de si
+    ha tocado el límite del tablero o alguna pieza
     */
     private boolean checkBottom(){
         if (tetrimino.getLimiteTablero() == gridRows) {
             return false;
         }
         
-        /*Esta seccion sirve para comprobar si al momento de caer, el tetrimino
-        esta tocando otra pieza
+        /*Esta sección sirve para comprobar si al momento de caer, el tetrimino
+        está tocando otra pieza
         */
         int[][] forma = tetrimino.getForma();
         int w = tetrimino.getWidth();
@@ -284,7 +284,7 @@ public class GameArea extends JPanel{
             
             if (lineaCompleta) {
                 
-                lineasLimpiadas++; /*Se incrementa cuando se limpia una linea y esta
+                lineasLimpiadas++; /*Se incrementa cuando se limpia una línea y esta
                 actualiza el score*/
                 limpiarLinea(r);
                 shiftDown(r);
@@ -304,10 +304,7 @@ public class GameArea extends JPanel{
     
     private void shiftDown(int r){
         for (int row = r; row > 0; row--) {
-            for (int col = 0; col < gridColumns; col++) {
-                
-                background[row][col] = background[row-1][col];
-            }
+            if (gridColumns >= 0) System.arraycopy(background[row - 1], 0, background[row], 0, gridColumns);
         }
     }
     
@@ -334,11 +331,11 @@ public class GameArea extends JPanel{
         }
     }
     
-    //Metodo para dibujar los tetriminos
+    //Método para dibujar los tetriminos
     private void drawTetrimino(Graphics g){
         
-        //Creacion de variables locales que toman como valor el retorno de los metodos de tetrimino
-        //Esto para hacer más facil el uso de las mismas en las líneas por debajo
+        //Creación de variables locales que toman como valor el retorno de los métodos de tetrimino
+        //Esto para hacer más fácil el uso de las mismas en las líneas por debajo
         int h = tetrimino.getHeight();
         int w = tetrimino.getWidth();
         Color c = tetrimino.getColor();
@@ -349,7 +346,7 @@ public class GameArea extends JPanel{
         for (int row  = 0; row < h ; row++) {
             for (int col = 0; col < w; col++) {
                 
-                //( 1 igual a que debe tener color)
+                //(1 igual a que debe tener color)
                 if (f[row][col]== 1) {
                     
                     int x = (tetrimino.getX() + col) * gridCellSize;
@@ -361,7 +358,7 @@ public class GameArea extends JPanel{
         }
     }
     
-    //Metodo para dibujar el fondo
+    //Método para dibujar el fondo
     private void drawBackground(Graphics g){
         Color color;
         
@@ -400,10 +397,10 @@ public class GameArea extends JPanel{
         super.paintComponent(g);
         
       
-        //Llamada al metodo para dibujar los tetriminos
+        //Llamada al método para dibujar los tetriminos
         drawTetrimino(g);
         
-        //Llamada al metodo para dibujar el fondo
+        //Llamada al método para dibujar el fondo
         drawBackground(g);
    
     }

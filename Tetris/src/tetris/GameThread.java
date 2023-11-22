@@ -53,12 +53,13 @@ public class GameThread extends Thread {
         while(true){
             
             ga.spawnTetrimino();
-            while(ga.caerTetrimino() == true){
-                /*Se mete dentro de una excepcion pues hay que especificar que pasa 
-                si por algun motivo el .sleep se interrumpe
+            while(ga.caerTetrimino())
+            {
+                /*Se mete dentro de una excepción, pues hay que especificar que pasa
+                si por algún motivo el .sleep se interrumpe
                 */
                 try {
-                    /* Metodo de la clase Thread para esperar unos segundos y hacer 
+                    /* Método de la clase Thread para esperar unos segundos y hacer
                     que el tetrimino se vuelva a dibujar para simular que cae
                     */
                     Thread.sleep(pausa);
@@ -68,14 +69,14 @@ public class GameThread extends Thread {
             }
                 if (ga.tetriminoFueraLimite()) {
                     
-                    System.out.println("GAME OVER");
+                    new GameOver(score);
                     break;
                 }
                 ga.moverTetriminioABackground();
                 score += ga.limpiarLineas();
                 gf.updateScore(score);
                 
-                int nvl = score / scorePorNivel + 1; //Añadimos 1 porque nivel esta inicializado a 0
+                int nvl = score / scorePorNivel + 1; //Añadimos 1 porque nivel está inicializado a 0
                 if (nvl > nivel) {
                  
                   nivel = nvl;
