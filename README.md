@@ -1,6 +1,7 @@
 ## Estructura de Clases
 
 ```mermaid
+
 classDiagram
     class GameThread {
         - GameArea ga
@@ -29,6 +30,23 @@ classDiagram
         + startGame()
         + updateScore(score: int)
         + updateNivel(nivel: int)
+    }
+
+    class GameOver {
+        - JButton bMenu
+        - JLabel lScore
+        - JPanel panel
+        + GameOver(int score)
+        + actionPerformed(ActionEvent evt)
+    }
+
+    class MainMenu {
+        - JButton bJugar
+        - JButton bSalir
+        - JPanel panel
+        - GameForm GameArea
+        + MainMenu()
+        + actionPerformed(ActionEvent evt)
     }
 
     class Tetrimino {
@@ -94,6 +112,8 @@ classDiagram
 
     GameThread --> GameArea
     GameThread --> GameForm
+    GameThread --> GameOver
+    GameThread --> MainMenu
     GameArea --> Tetrimino
     Tetrimino <|-- Figura 
     Figura <|-- FiguraI
