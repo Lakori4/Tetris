@@ -56,9 +56,10 @@ classDiagram
         - int y
         - int[][][] formas
         - int rotacionActual
-        - Color[] coloresDisponibles
+        
         + Tetrimino(f: int[][])
         + spawn(gridWidth: int)
+        + setColor (color: Color)
         + getForma(): int[][]
         + getColor(): Color
         + getHeight(): int
