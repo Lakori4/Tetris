@@ -1,4 +1,3 @@
-
 package tetris;
 
 import java.awt.*;
@@ -16,12 +15,10 @@ import javax.swing.*;
  */
 public class GameForm extends JFrame {
 
-    /**
-     * Constructor de la clase GameForm que inicializa la interfaz de usuario y el área de juego.
-     */
+    private static GameForm instance; //Instancia de Singleton
     private final GameArea ga;
     /**
-     * Creates new form GameForm
+     * Constructor de la clase GameForm que inicializa la interfaz de usuario y el área de juego.
      */
     public GameForm() {
         initComponents();
@@ -32,12 +29,28 @@ public class GameForm extends JFrame {
         startGame();
     }
 
-    //Método para los controles por teclado
-    /* Input map → Contiene las pulsaciones de teclas
-       Action map → Contiene las acciones de las teclas
-    */
-    
     /**
+     * Método estático para obtener la instancia única de GameForm.
+     *
+     * @return La instancia única de GameForm.
+     */
+    public static GameForm getInstance() {
+        if (instance == null) {
+            instance = new GameForm();
+        }
+        return instance;
+    }
+
+    public static void destroyInstance() {
+        instance = null;
+    }
+
+    /**
+     * Método para los controles por teclado
+     *
+     * Input map → Contiene las pulsaciones de teclas
+     * Action map → Contiene las acciones de las teclas
+     *
      * Inicializa los controles por teclado para el juego.
      */
     private void initControls(){
@@ -219,7 +232,7 @@ public class GameForm extends JFrame {
      void btnMainMenuActionPerformed() {//GEN-FIRST:event_btnMainMenuActionPerformed
         setVisible(false); //Esconde la ventana de juego
         dispose(); //Elimina la ventana de juego
-
+        destroyInstance(); //Elimina la instancia Singleton
         new MainMenu(); //Llama al menú principal como si hubiera vuelto a empezar
 
     }//GEN-LAST:event_btnMainMenuActionPerformed

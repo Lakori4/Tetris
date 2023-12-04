@@ -82,7 +82,7 @@ public class MainMenu extends JFrame implements ActionListener {
 
                 public void run() {
 
-                    game = new GameForm(); //Ejecuta el juego
+                    game = GameForm.getInstance(); //Ejecuta el juego
                     dispose();
                     game.setVisible(true);
                 }
