@@ -2,6 +2,8 @@
 package bloquestetris;
 
 
+import java.awt.*;
+
 /**
  * Representa la figura Tetrimino en forma de T.
  * Extiende la clase abstracta Figura.
@@ -14,5 +16,6 @@ public class FiguraT extends Figura {
      */
     public FiguraT(){
         super(new int[][]{{1,1,1},{0,1,0}});
+        setColor(Color.MAGENTA);
     }
 }

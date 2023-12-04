@@ -25,8 +25,7 @@ public class Tetrimino {
     private int[][][] formas;
     
     private int rotacionActual;
-    private Color[] coloresDisponibles = {Color.CYAN, Color.MAGENTA, Color.ORANGE, Color.BLUE, Color.RED, Color.GREEN, Color.PINK, Color.YELLOW};
-    
+
     /**
      * Constructor para crear un tetrimino con una forma inicial.
      *
@@ -36,6 +35,10 @@ public class Tetrimino {
     
         forma = f;
         initFormas();
+    }
+
+    public void setColor(Color color) {
+        this.color = color;
     }
     
     private void initFormas(){
@@ -69,9 +72,7 @@ public class Tetrimino {
         forma = formas[rotacionActual];
         
         y =  -getHeight(); //Es negativo porque asi aparece por encima del tablero
-        x = r.nextInt(gridWidth- getWidth());
-        color = coloresDisponibles[r.nextInt(coloresDisponibles.length)];
-        
+        x =  gridWidth/2;
     }
     
     

@@ -1,18 +1,25 @@
 
 package bloquestetris;
 
+import java.awt.*;
+
+
+
 /**
  *
  * @author ginar
  */
 public class FiguraI extends Figura {
 
+
     /**
      * Constructor de la clase FiguraI.
      * Inicializa la figura con una matriz específica.
      */
     public FiguraI(){
+
         super(new int[][]{{1,1,1,1}});
+        setColor(Color.CYAN);
     }
 
     /**

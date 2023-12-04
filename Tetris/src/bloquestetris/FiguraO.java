@@ -1,6 +1,8 @@
 
 package bloquestetris;
 
+import java.awt.*;
+
 /**
  * Representa la figura Tetrimino en forma de O.
  * Extiende la clase abstracta Figura.
@@ -12,6 +14,8 @@ public class FiguraO extends Figura {
      * Inicializa la figura con una matriz específica.
      */
     public FiguraO(){
+
         super(new int[][]{{1,1},{1,1}});
+        setColor(Color.YELLOW);
     }
 }
