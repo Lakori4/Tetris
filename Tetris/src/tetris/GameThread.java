@@ -24,7 +24,7 @@ public class GameThread extends Thread {
     private int scorePorNivel = 2; // Puntuación requerida para avanzar de nivel.
 
     private int pausa = 1000; // Pausa inicial entre caídas de tetriminos (en milisegundos).
-    private int velocidadPorNivel = 200; // Reducción de la pausa por nivel (en milisegundos).
+    private int velocidadPorNivel = 50; // Reducción de la pausa por nivel (en milisegundos).
 
     
     
