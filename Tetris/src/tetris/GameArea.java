@@ -181,7 +181,7 @@ public class GameArea extends JPanel{
     /*Método para revisar si el tetrimino puede moverse o no dependiendo de si
     ha tocado el límite del tablero o alguna pieza
     */
-    private boolean checkBottom(){
+    protected boolean checkBottom(){
         if (tetrimino.getLimiteTablero() == gridRows) {
             return false;
         }

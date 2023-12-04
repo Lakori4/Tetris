@@ -49,6 +49,7 @@ public class GameForm extends JFrame {
         im.put(KeyStroke.getKeyStroke("LEFT"),"left");
         im.put(KeyStroke.getKeyStroke("UP"),"up");
         im.put(KeyStroke.getKeyStroke("DOWN"),"down");
+        im.put(KeyStroke.getKeyStroke("SPACE"),"space" );
         
         /* Las clases abstractas no pueden instanciarse, necesitamos la clase 
         Action que es abstracta. Para solucionar el hecho de que no puede 
@@ -80,6 +81,14 @@ public class GameForm extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 ga.dropTetrimino();
+            }
+        });
+        am.put("space",new AbstractAction(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                while (ga.checkBottom()) {
+                    ga.dropTetrimino();
+                }
             }
         });
     }
@@ -154,12 +163,12 @@ public class GameForm extends JFrame {
         );
 
         scoreDisplay.setBackground(new java.awt.Color(255, 255, 255));
-        scoreDisplay.setFont(new java.awt.Font("Segoe UI", Font.PLAIN, 14)); // NOI18N
+        scoreDisplay.setFont(new java.awt.Font("OCR A Extended", Font.PLAIN, 10)); // NOI18N
         scoreDisplay.setForeground(new java.awt.Color(255, 0, 51));
         scoreDisplay.setText("Score: 0");
 
         nivelDisplay.setBackground(new java.awt.Color(255, 255, 255));
-        nivelDisplay.setFont(new java.awt.Font("Segoe UI", Font.PLAIN, 14)); // NOI18N
+        nivelDisplay.setFont(new java.awt.Font("OCR A Extended", Font.PLAIN, 10)); // NOI18N
         nivelDisplay.setForeground(new java.awt.Color(255, 0, 51));
         nivelDisplay.setText("Nivel: 1");
 
@@ -217,6 +226,7 @@ public class GameForm extends JFrame {
 
     
     public static void main(String[] args) {
+
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
