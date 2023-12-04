@@ -62,8 +62,10 @@ public class GameOver extends JFrame implements ActionListener {
      * @param evt the event to be processed
      */
     public void actionPerformed(ActionEvent evt) {
-        dispose(); //Eliminamos la ventana de "GameOver"
-        MainMenu.game.btnMainMenuActionPerformed(); //Llamamos a la función del botón de la pantalla principal para eliminar el JFrame del juego
+        if (evt.getSource() == bMenu) {
+            dispose(); //Eliminamos la ventana de "GameOver"
+            MainMenu.game.btnMainMenuActionPerformed(); //Llamamos a la función del botón de la pantalla principal para eliminar el JFrame del juego
+        }
 
     }
 }
