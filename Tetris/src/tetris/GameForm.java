@@ -20,7 +20,7 @@ public class GameForm extends JFrame {
     /**
      * Constructor de la clase GameForm que inicializa la interfaz de usuario y el área de juego.
      */
-    public GameForm() {
+    private GameForm() {
         initComponents();
         ga =new GameArea (gameAreaPlaceholder,10);
         this.add(ga);
