@@ -19,7 +19,7 @@ public class FiguraI extends Figura {
     public FiguraI(){
 
         super(new int[][]{{1,1,1,1}});
-        setColor(new java.awt.Color(0, 228, 255));
+        setColor(new Color(0, 228, 255));
     }
 
     /**

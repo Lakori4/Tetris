@@ -28,8 +28,6 @@ public class GameForm extends JFrame {
         initControls();
         startGame();
         AudioPlayer.main_theme = new AudioPlayer("resources/main_theme.wav", 0);
-/*        AudioPlayer.game_over = new AudioPlayer("resources/game_over.wav", 1);
-        AudioPlayer.game_over.reset();*/
     }
 
     /**
