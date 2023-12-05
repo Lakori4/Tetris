@@ -40,7 +40,6 @@ public class AudioPlayer {
     }
 
     public void reset(){
-        clip.loop(0);
         clip.stop();
         clip.setFramePosition(0);
     }

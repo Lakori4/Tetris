@@ -238,7 +238,7 @@ public class GameForm extends JFrame {
         dispose(); //Elimina la ventana de juego
         destroyInstance(); //Elimina la instancia Singleton
         AudioPlayer.main_theme.reset();
-        AudioPlayer.game_over.reset();
+
         new MainMenu(); //Llama al menú principal como si hubiera vuelto a empezar
 
     }//GEN-LAST:event_btnMainMenuActionPerformed
