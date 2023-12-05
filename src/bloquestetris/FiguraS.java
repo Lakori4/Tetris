@@ -15,6 +15,6 @@ public class FiguraS extends Figura {
      */
     public FiguraS(){
         super(new int[][]{{0,1,1},{1,1,0}});
-        setColor(Color.RED);
+        setColor(new Color(249,1,0));
     }
 }

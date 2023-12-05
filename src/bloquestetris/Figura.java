@@ -24,9 +24,5 @@ public abstract class Figura extends Tetrimino {
      * Implementación predeterminada del método rotar.
      * Lógica de rotación común para todas las figuras.
      */
-    /*@Override
-    public void rotar() {
-        // Lógica de rotación común, si la hay
-        super.rotar();
-    }*/
+
 }

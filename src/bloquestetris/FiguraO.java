@@ -16,6 +16,6 @@ public class FiguraO extends Figura {
     public FiguraO(){
 
         super(new int[][]{{1,1},{1,1}});
-        setColor(Color.YELLOW);
+        setColor(new Color(249,255,0));
     }
 }

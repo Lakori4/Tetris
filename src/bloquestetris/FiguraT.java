@@ -16,6 +16,6 @@ public class FiguraT extends Figura {
      */
     public FiguraT(){
         super(new int[][]{{1,1,1},{0,1,0}});
-        setColor(Color.MAGENTA);
+        setColor(new Color(157,2,150));
     }
 }
